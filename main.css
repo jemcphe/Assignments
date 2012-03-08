@@ -43,6 +43,7 @@ p {
 }
 #addPlayer-page {
 	background-color: #666;
+	overflow: scroll;
 }
 #addPlayer-page div {
 	background-color: #000;
@@ -50,7 +51,6 @@ p {
 	height: 10%;
 	margin: 0px;
 	padding: 10px;
-	overflow: hidden;
 }
 fieldset {
     color: #F9A225;
@@ -83,4 +83,8 @@ footer a:hover {
 }
 footer a:active {
 	color: #000;
+}
+#players ul {
+	margin-bottom: 10px;
+	background-color: #666;
 }
