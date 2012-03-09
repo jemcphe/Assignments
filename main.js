@@ -18,8 +18,10 @@ window.addEventListener("DOMContentLoaded", function() {
 	function makeDropDown() {
 		var 	formTag = document.getElementsByTagName("form"), //formTag is an array of all the form tags.
 				selectLi = $("select"),
+				//Create <select></select> element
 				makeSelect = document.createElement("select");
 				makeSelect.setAttribute("id", "position");
+		//Loop through and populate option elements		
 		for(var i=0, j=positions.length; i<j; i++){
 			var makeOption = document.createElement("option");
 			var optText = positions[i];
@@ -38,7 +40,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			starterValue = "No";
 		}
 	}
-	
+	//Toggle ON/OFF used for displaying data
 	function toggleControls(n){
 		switch(n){
 			case"on":
@@ -58,8 +60,9 @@ window.addEventListener("DOMContentLoaded", function() {
 				return false;
 		}
 	}
-	
+	// Create StoreData Function
 	function storeData(){
+		//Create Random Key
 		var 	id									= Math.floor(Math.random()*1000001);
 		getCheckboxValue();
 		// gather up all our form field values and store in an object.
@@ -75,12 +78,13 @@ window.addEventListener("DOMContentLoaded", function() {
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Player Saved!");
 	};
-	 
+	 // function to get data from form Values & display in div
 	function getData() {
 		toggleControls("on");
 		if(localStorage.length === 0) {
 			alert("There are no players stored!")
 		}
+		//Create Div/ul/li tags to display data
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "players");
 		document.body.appendChild(makeDiv);
@@ -103,7 +107,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 	}
-	
+	//function to clear data from localStorage
 	function clearLocal() {
 		if(localStorage.length === 0) {
 			alert("There is no data to clear.");
